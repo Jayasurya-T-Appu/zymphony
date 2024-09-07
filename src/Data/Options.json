@@ -1,0 +1,46 @@
+{
+    "workflows": [
+      {
+        "name": "Workflow",
+        "options": [
+          "Knowledge Assistant",
+          "Summarization Agent",
+          "Document Search"
+        ]
+      }
+    ],
+    "foundational_models": [
+      {
+        "name": "Foundational Model",
+        "options": [
+          "Llama 3.1",
+          "DBRx Mistral",
+          "BGE Small",
+          "BGE M3 GTE Qwen 2 7 B"
+        ]
+      }
+    ],
+
+    "embedding_models": [
+      {
+        "name": "Embedding Model",
+        "options": [
+          "BGE Small",
+          "BGE M3 GTE Qwen 2 7 B"
+        ]
+      }
+    ],
+    "vector_databases": [
+      {
+        "name": "Vector Database",
+        "options": [
+          "Qdrant",
+          "Weaviate",
+          "Milvus"
+        ]
+      }
+    ]
+    
+   
+  }
+  

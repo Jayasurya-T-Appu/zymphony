@@ -1,0 +1,12 @@
+.DropItemsOption__container{
+    height: 95vh;
+    width: 20vw;
+    background-color: #447e9b;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    overflow-y: auto;
+
+}
