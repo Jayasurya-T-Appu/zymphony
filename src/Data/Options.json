@@ -1,5 +1,5 @@
 {
-    "workflows": [
+    "Work Flow": [
       {
         "name": "Workflow",
         "options": [
@@ -9,7 +9,7 @@
         ]
       }
     ],
-    "foundational_models": [
+    "Foundational Models": [
       {
         "name": "Foundational Model",
         "options": [
@@ -21,7 +21,7 @@
       }
     ],
 
-    "embedding_models": [
+    "Embedding Models": [
       {
         "name": "Embedding Model",
         "options": [
@@ -30,7 +30,7 @@
         ]
       }
     ],
-    "vector_databases": [
+    "Vector Databases": [
       {
         "name": "Vector Database",
         "options": [

@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import './CustomNode.css';
 import { IoMdClose } from 'react-icons/io';
 import { Handle } from 'reactflow';
 
 const CustomeNode = ({ id, data }) => {
   const [items, setItems] = useState([]);
-
-  // Handle item drop
   const handleDrop = (event) => {
     event.preventDefault();
     const droppedItem = event.dataTransfer.getData('text');
@@ -32,11 +29,11 @@ const CustomeNode = ({ id, data }) => {
   };
 
   return (
-    <div onDrop={handleDrop} onDragOver={allowDrop} className='drop_area shadow'>
-      <h4 className='drop_box'>{data.label}</h4>
+    <div onDrop={handleDrop} onDragOver={allowDrop} className='min-w-[250px] min-h-[350px] bg-gray-100 p-2.5 rounded-md border border-gray-500'>
+      <h4 className='text-[22px] font-medium text-center'>{data.label}</h4>
       {items.length > 0 ? (
         items.map((item, index) => (
-          <div key={index} className='drop_box_item'>
+          <div key={index} className='w-full bg-antiquewhite p-2.5 text-[18px] font-semibold my-1 flex items-center justify-between border border-green-500'>
             <p>{item}</p>
             <IoMdClose size={22} onClick={() => removeItem(item)} />
           </div>

@@ -10,12 +10,13 @@ const DraggableItem = ({item}) => {
     <div
     draggable
     onDragStart={handleDragStart}
-    style={{
-      padding: '10px',
-      margin: '10px 0',
-      backgroundColor: 'lightgray',
-      cursor: 'grab',
-    }}
+    // style={{
+    //   padding: '10px',
+    //   margin: '10px 0',
+    //   backgroundColor: 'lightgray',
+    //   cursor: 'grab',
+    // }}
+    className='my-2 p-2 cursor-grab bg-stone-400 rounded font-semibold'
   >
     {item[1]}
   </div>

@@ -15,7 +15,7 @@ const DropArea = () => {
       const keys = Object.keys(options);
 
       keys.forEach((key, index) => {
-        const xPos = index * 250; 
+        const xPos = index * 350; 
         if (Array.isArray(options[key])) {
           initialNodes.push({
             id: (index + 1).toString(),
@@ -59,7 +59,7 @@ const DropArea = () => {
     custom: CustomEdge
   }), []);
   return (
-    <div className='border border-sky-500 p-2' style={{ height: '95vh', width: '80vw' }}>
+    <div className='p-2 m-3' style={{ height: '95vh', width: '80vw' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}

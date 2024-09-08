@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import "./DropItemsOption.css"
 import Items from '../ItemsComponent/Items'
 import data from '../../Data/Options.json'
 const DropitemsOption = () => {
@@ -16,7 +15,7 @@ useEffect(()=>{
 
 
   return (
-    <div className='DropItemsOption__container shadow' >
+    <div className='h-[95vh] w-96 bg-customBlue rounded flex flex-col items-center p-2.5 overflow-y-auto  shadow ' >
       {
         optionsData?.map((key)=>{
           return(
