@@ -1,4 +1,3 @@
-// CustomEdge.js
 import React from 'react';
 import { getBezierPath } from 'reactflow';
 
@@ -24,7 +23,6 @@ const CustomEdge = ({
 
   return (
     <g>
-
       <defs>
         <marker
           id="arrowhead"
@@ -35,16 +33,21 @@ const CustomEdge = ({
           orient="auto"
           markerUnits="strokeWidth"
         >
-          <polygon points="0 0, 10 3.5, 0 7" fill="green" />
+          <polygon points="0 0, 10 3.5, 0 7" fill="gray" />
         </marker>
       </defs>
 
       <path
         id={id}
-        style={{ stroke: 'green', strokeWidth: 2, ...style }} 
+        style={{
+          stroke: 'gray',           
+          strokeWidth: 2,           
+          strokeDasharray: '5 5',   
+          ...style,
+        }}
         className="react-flow__edge-path"
         d={edgePath}
-        markerEnd="url(#arrowhead)" 
+        markerEnd="url(#arrowhead)"
       />
     </g>
   );

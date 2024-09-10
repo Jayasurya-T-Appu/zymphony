@@ -11,42 +11,87 @@ const DropArea = () => {
 
   useEffect(() => {
     const initializeNodes = () => {
-      const initialNodes = [];
-      const keys = Object.keys(options);
+      const initialNodes = [
+        {
+          id:"1",
+          type:"customNode",
+          position:{x:100, y:100},
+          data:{
+            label:"Workflow",
+            allowedItems:["Work Flow"]
+          }
+        },
+        {
+          id:"2",
+          type:"customNode",
+          position:{x:450, y:300},
+          data:{
+            label:"Architecture",
+            allowedItems:["Architecture"]
+          }
+        },
+        {
+          id:"3",
+          type:"customNode",
+          position:{x:800, y:100},
+          data:{
+            label:"Foundational Model",
+            allowedItems:["Foundational Models"]
+          }
+        },
+        {
+          id:"4",
+          type:"customNode",
+          position:{x:1150, y:300},
+          data:{
+            label:"Foundational Model",
+            allowedItems:["Foundational Models"]
+          }
+        },
+        {
+          id:"5",
+          type:"customNode",
+          position:{x:800, y:600},
+          data:{
+            label:"Foundational Model",
+            allowedItems:["Foundational Models"]
+          }
+        },
+      ];
+   
 
-      keys.forEach((key, index) => {
-        const xPos = index * 350; 
-        if (Array.isArray(options[key])) {
-          initialNodes.push({
-            id: (index + 1).toString(),
-            type: 'customNode',
-            position: { x: xPos, y: 100 }, 
-            data: { 
-              label: options[key][0].name,
-              allowedItems: [key] 
-            }
-          });
-        }
-      });
 
       setNodes(initialNodes);
 
-      const initialEdges = initialNodes.map((node, index) => {
-        if (index < initialNodes.length - 1) {
-          return {
-            id: `e${index + 1}-${index + 2}`,
-            source: node.id,
-            target: (index + 2).toString(),
-            type: 'custom'
-          };
-        }
-        return null;
-      }).filter(edge => edge !== null);
+      const initialEdges = [
+        {
+          id:"e1-2",
+          source:'1',
+          target:'2',
+          type:'custom'
+        },
+        {
+          id:'e2-3',
+          source:'2',
+          target:'3',
+          type:'custom'
+        },
+        {
+          id:'e3-4',
+          source:'3',
+          target:'4',
+          type:'custom'
+        },
+        {
+          id:'e4-5',
+          source:'4',
+          target:'5',
+          type:'custom'
+        },
+      ]
 
       setEdges(initialEdges);
     };
-    console.log(edges);
-    
 
     initializeNodes();
   }, []);

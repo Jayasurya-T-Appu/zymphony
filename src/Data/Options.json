@@ -9,6 +9,16 @@
         ]
       }
     ],
+    "Architecture":[
+      {
+        "name": "Architecture",
+        "options":[
+          "Foundational Model",
+          "RAG"
+        ]
+
+      }
+    ],
     "Foundational Models": [
       {
         "name": "Foundational Model",
@@ -20,6 +30,8 @@
         ]
       }
     ],
+
+  
 
     "Embedding Models": [
       {
