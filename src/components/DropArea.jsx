@@ -8,6 +8,7 @@ import options from "../Data/Options.json";
 const DropArea = () => {
   const [nodes, setNodes] = useState([]);
   const [edges, setEdges] = useState([]);
+  const [active, setActive] = useState(1)
 
   useEffect(() => {
     const initializeNodes = () => {
@@ -17,8 +18,11 @@ const DropArea = () => {
           type:"customNode",
           position:{x:100, y:100},
           data:{
+            id: 1,
             label:"Workflow",
-            allowedItems:["Work Flow"]
+            allowedItems:["Work Flow"],
+            active,
+            setActive
           }
         },
         {
@@ -26,8 +30,11 @@ const DropArea = () => {
           type:"customNode",
           position:{x:450, y:300},
           data:{
+            id:2,
             label:"Architecture",
-            allowedItems:["Architecture"]
+            allowedItems:["Architecture"],
+            active,
+            setActive
           }
         },
         {
@@ -35,8 +42,12 @@ const DropArea = () => {
           type:"customNode",
           position:{x:800, y:100},
           data:{
+            id:3,
             label:"Foundational Model",
-            allowedItems:["Foundational Models"]
+            allowedItems:["Foundational Models"],
+            active,
+            setActive
+
           }
         },
         {
@@ -44,8 +55,11 @@ const DropArea = () => {
           type:"customNode",
           position:{x:1150, y:300},
           data:{
-            label:"Foundational Model",
-            allowedItems:["Foundational Models"]
+            id:4,
+            label:"Embedding Model",
+            allowedItems:["Embedding Models"],
+            active,
+            setActive
           }
         },
         {
@@ -53,8 +67,10 @@ const DropArea = () => {
           type:"customNode",
           position:{x:800, y:600},
           data:{
-            label:"Foundational Model",
-            allowedItems:["Foundational Models"]
+            id:5,
+            label:"Vector Databases",
+            allowedItems:["Vector Databases"],
+            active
           }
         },
       ];
@@ -64,31 +80,11 @@ const DropArea = () => {
       setNodes(initialNodes);
 
       const initialEdges = [
-        {
-          id:"e1-2",
-          source:'1',
-          target:'2',
-          type:'custom'
-        },
-        {
-          id:'e2-3',
-          source:'2',
-          target:'3',
-          type:'custom'
-        },
-        {
-          id:'e3-4',
-          source:'3',
-          target:'4',
-          type:'custom'
-        },
-        {
-          id:'e4-5',
-          source:'4',
-          target:'5',
-          type:'custom'
-        },
-      ]
+        { id: "e1-2", source: '1', target: '2', type: 'custom' },
+        { id: 'e2-3', source: '2', target: '3', type: 'custom' },
+        { id: 'e3-4', source: '3', target: '4', type: 'custom' },
+        { id: 'e4-5', source: '4', target: '5', type: 'custom' },
+      ];
 
       setEdges(initialEdges);
     };
